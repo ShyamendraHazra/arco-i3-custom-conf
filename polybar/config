@@ -38,8 +38,9 @@ format-margin =
 format-offset =
 
 [colors]
-background = #60000000
-foreground = #eeeeee
+
+#background = #60000000
+# foreground = #eeeeee
 foreground-active = #6790EB
 occupied = #cccccc
 occupied-active = #b3c7f5
@@ -48,6 +49,45 @@ alert = #d08770
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
+
+foreground = ${xrdb:color13}
+background = #66000000
+
+; Define colors based on Pywal-generated values
+color0 = ${xrdb:color0}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+color7 = ${xrdb:color7}
+color8 = ${xrdb:color8}
+color9 = ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+
+
+color0-rgba = ${xrdb:color0}/aa
+color1-rgba = ${xrdb:color1}/aa
+color2-rgba = ${xrdb:color2}/aa
+color3-rgba = ${xrdb:color3}/aa
+color4-rgba = ${xrdb:color4}/aa
+color5-rgba = ${xrdb:color5}/aa
+color6-rgba = ${xrdb:color6}/aa
+color7-rgba = ${xrdb:color7}/aa
+color8-rgba = ${xrdb:color8}/aa
+color9-rgba = ${xrdb:color9}/aa
+color10-rgba = ${xrdb:color10}/aa
+color11-rgba = ${xrdb:color11}/aa
+color12-rgba = ${xrdb:color12}/aa
+color13-rgba = ${xrdb:color13}/aa
+color14-rgba = ${xrdb:color14}/aa
+color15-rgba = ${xrdb:color15}/aa
 
 ################################################################################
 ################################################################################
@@ -378,7 +418,7 @@ click-right = exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/
 
 format-padding = 1
 format-foreground = ${colors.foreground}
-format-underline = ${colors.foreground}
+# format-underline = ${colors.foreground}
 format-background = ${colors.background}
 
 ################################################################################
@@ -488,17 +528,17 @@ format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
-format-charging-underline = #a3c725
+;format-charging-underline = #a3c725
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging =  %percentage%%
-format-discharging-underline = #c7ae25
+;format-discharging-underline = #c7ae25
 format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = #a3c725
-format-full-underline = ${colors.foreground}
+;format-full-underline = ${colors.foreground}
 format-full-foreground = ${colors.foreground}
 format-full-background = ${colors.background}
 
@@ -553,7 +593,7 @@ format-background = ${colors.background}
 ;   
 format-prefix = " "
 format-prefix-foreground = ${colors.color5}
-format-underline = ${colors.foreground}
+;format-underline = ${colors.foreground}
 
 ; Available tags:
 ;   <label> (default)
@@ -645,7 +685,7 @@ time-alt = %A %d %B %H:%M:%S
 ;format-prefix = " "
 format-prefix =
 format-prefix-foreground = ${color.foreground}
-format-underline = ${colors.foreground}
+#format-underline = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = %time%
@@ -670,7 +710,7 @@ type = internal/network
 interface = enp3s0
 interval = 3.0
 
-format-connected-underline = ${colors.foreground}
+; format-connected-underline = ${colors.foreground}
 
 ; format-connected-underline = ${colors.background}
 format-connected-prefix = "󰈀 "
@@ -1004,7 +1044,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = " "
 ;format-prefix-foreground = #0084FF
-format-underline = ${colors.foreground}
+#format-underline = ${colors.foreground}
 
 ################################################################################
 
@@ -1073,7 +1113,7 @@ label = %percentage_used%%
 format = Mem <label>
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.foreground}
+;format-underline = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -1164,7 +1204,7 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = #FE522C
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-format-connected-underline = ${colors.foreground}
+; format-connected-underline = ${colors.foreground}
 
 ################################################################################
 
@@ -1181,7 +1221,7 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = #3EC13F
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-format-connected-underline = ${colors.foreground}
+;format-connected-underline = ${colors.foreground}
 
 ################################################################################
 
@@ -1224,10 +1264,10 @@ interval = 0.5
 scroll-down = bash -c "pactl set-sink-volume @DEFAULT_SINK@ -1%"
 scroll-up = bash -c "pactl set-sink-volume @DEFAULT_SINK@ +1%"
 click-middle = bash -c "pavucontrol"
-format-prefix = " "
+format-prefix = "  "
 format-padding = 1
 format-foreground = ${colors.foreground}
-format-underline = ${colors.foreground}
+;format-underline = ${colors.foreground}
 format-background = ${colors.background}
 
 ################################################################################
@@ -1249,7 +1289,7 @@ format-prefix = "󰃟 "
 format-padding = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-underline = ${colors.foreground}
+;format-underline = ${colors.foreground}
 
 ################################################################################
 
@@ -1646,13 +1686,13 @@ label-disconnected = %ifname% disconnected
 
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-format-connected-underline = #55aa55
+;format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = #55aa55
 format-connected-prefix-background = ${colors.background}
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
+; format-disconnected-underline = ${colors.alert}
 label-disconnected-foreground = ${colors.foreground}
 
 ################################################################################
@@ -1671,7 +1711,7 @@ format-connected-background = ${colors.background}
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.foreground}
 format-connected-prefix-background = ${colors.background}
-format-connected-underline = ${colors.foreground}
+; format-connected-underline = ${colors.foreground}
 
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.alert}
@@ -1683,7 +1723,7 @@ format-disconnected-background = ${colors.background}
 format-disconnected-prefix = "  "
 format-disconnected-prefix-foreground = ${colors.alert}
 format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
+; format-disconnected-underline =${colors.alert}
 
 ramp-signal-0 = ▁
 ramp-signal-1 = ▂

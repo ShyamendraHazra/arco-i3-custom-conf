@@ -702,7 +702,7 @@ bindsym $mod+v exec copyq toggle
 bindsym $mod+Shift+v exec copyq &
 bindsym $mod_Shift+n exec nm-applet &
 bindsym $mod+Shift+p exec pavucontrol
-
+bindsym $mod+Shift+i exec systemsettings
 # SCREENSHOTS
 bindsym Ctrl+Print exec spectacle -l # Launch Spectacle without capture
 bindsym Print exec spectacle # Launch Spectacle
