@@ -617,9 +617,9 @@ popup_during_fullscreen smart
 # delete or uncomment the following lines if you do not have it or do not
 # want it
 
-for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
+for_window [class="^.*"] border pixel 3
+# gaps inner 3
+# gaps outer 3
 # smart_gaps on
 # smart_borders on
 
@@ -690,7 +690,7 @@ client.background       $bg
 
 # GAPS BETWEEN WINDOWS
 gaps inner 6
-gaps outer 10
+gaps outer 6
 
 
 # APP LAUNCHERS
@@ -711,4 +711,5 @@ bindsym $mod+Print exec spectacle -a # Capture active window
 bindsym $mod+Ctrl+Print exec spectacle -u # Capture window under cursor
 bindsym $mod+Shift+Print exec spectacle -r # Capture rectangualr region
 
+# for_window [class="Polybar"] floating enable
 
