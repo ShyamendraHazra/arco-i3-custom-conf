@@ -39,19 +39,19 @@ format-offset =
 
 [colors]
 
-#background = #60000000
 # foreground = #eeeeee
-foreground-active = ${xrdb:color9}
+foreground-active = ${xrdb:color11}
 occupied = ${xrdb:color11}
 occupied-active = ${xrdb:color7}
 active = ${xrdb:color5}
-alert = ${xrdb:color3}
+alert = ${xrdb:color0}
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
 
-foreground = ${xrdb:color14}
-background = #66000000
+foreground = ${xrdb:color15}
+
+background = #00000000
 
 ; Define colors based on Pywal-generated values
 color0 = ${xrdb:color0}
@@ -139,10 +139,9 @@ font-1 = "Noto Sans Mono:size=10;0"
 font-2 = "FontAwesome:size=10;0"
 #font-4 = "Noto Sans:size=14;0"
 
-modules-left = archlinux break kernel
-
+modules-left = archlinux kernel
 modules-center = i3
-modules-right = date break
+modules-right = date
 
 ;dim-value = 1.0
 
@@ -236,8 +235,6 @@ font-2 = "FontAwesome:size=10;0"
 modules-left = eth wireless-network networkspeedup networkspeeddown
 modules-center = memory2 cpu1
 modules-right = volume-custom backlight-custom battery powermenu
-
-separator = |
 
 ;dim-value = 1.0
 
@@ -353,7 +350,7 @@ format = <label-state> <label-mode>
 label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = #000000
-label-mode-background = #FFBB00
+label-mode-background = ${colors:background}
 
 ; Available tokens:
 ;   %name%
@@ -363,7 +360,7 @@ label-mode-background = #FFBB00
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
 label-focused = %icon% %name%
-label-focused-background = ${colors.background}
+label-focused-background = ${xrdb:color9}
 label-focused-foreground = ${colors.foreground}
 label-focused-underline = #6790eb
 label-focused-padding = 2
@@ -416,10 +413,10 @@ label = "Arch Linux"
 click-left = warp-terminal
 click-middle = archlinux-logout
 click-right = exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/i3/polybar/scripts/rofi/launcher2.rasi
-format-padding = 1
 format-foreground = ${colors.foreground}
-# format-underline = ${colors.foreground}
-format-background = ${colors.background}
+format-background = ${xrdb:color9}
+format-padding = 1
+format-margin = 2
 
 ################################################################################
 
@@ -527,20 +524,29 @@ full-at = 100
 format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
 format-charging-foreground = ${colors.foreground}
-format-charging-background = ${colors.background}
-;format-charging-underline = #a3c725
+format-charging-background = ${xrdb:color9}
+format-charging-padding = 1
+format-charging-margin = 2
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging =  %percentage%%
 ;format-discharging-underline = #c7ae25
 format-discharging-foreground = ${colors.foreground}
-format-discharging-background = ${colors.background}
+format-discharging-background = ${xrdb:color9}
+format-discharging-padding = 1
+format-discharging-margin = 2
+
+
 
 format-full-prefix = "  "
 format-full-prefix-foreground = #a3c725
 ;format-full-underline = ${colors.foreground}
 format-full-foreground = ${colors.foreground}
-format-full-background = ${colors.background}
+format-full-background = ${xrdb:color9}
+format-full-padding = 1
+format-full-margin = 2
+
+
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -589,7 +595,10 @@ type = internal/cpu
 ; Default: 1
 interval = 1
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-background = ${xrdb:color9}
+format-margin = 2
+format-padding = 1
+
 ;   
 format-prefix = " "
 format-prefix-foreground = ${colors.color5}
@@ -602,7 +611,6 @@ format-prefix-foreground = ${colors.color5}
 ;   <ramp-coreload>
 format = <label> <ramp-coreload>
 
-format-padding = 2
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load
@@ -687,9 +695,10 @@ format-prefix = " "
 format-prefix-foreground = ${color.foreground}
 #format-underline = ${colors.foreground}
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
 label = %time%
-
+format-background = ${xrdb:color9}
+format-padding = 1
+format-margin = 2
 #################################################################
 
 [module/discord]
@@ -715,10 +724,12 @@ interval = 3.0
 ; format-connected-underline = ${colors.background}
 format-connected-prefix = "󰈀 "
 format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
 format-connected-prefix-foreground = ${colors.foreground}
-
 label-connected = IP %local_ip%
+
+format-connected-background = ${xrdb:color9}
+format-connected-padding = 1
+format-connected-margin = 2
 
 format-disconnected = 
 ; format-disconnected = <label-disconnected>
@@ -1041,11 +1052,12 @@ tail = false
 interval = 1024
 
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
 format-prefix = "  "
 ;format-prefix-foreground = #0084FF
 #format-underline = ${colors.foreground}
-
+format-background = ${xrdb:color9}
+format-padding = 1
+format-margin = 2
 ################################################################################
 
 [module/load-average]
@@ -1091,7 +1103,9 @@ format-prefix = "  "
 format-prefix-foreground = #3384d0
 format-underline = #3384d0
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-background = ${xrdb:color9}
+format-padding = 1
+format-margin = 2
 
 ################################################################################
 
@@ -1113,10 +1127,10 @@ label = %percentage_used%%
 format = Mem <label>
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground}
-;format-underline = ${colors.foreground}
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
+format-background = ${xrdb:color9}
+format-padding = 1
+format-margin = 2
 ################################################################################
 
 [module/memory3]
@@ -1203,9 +1217,12 @@ format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-prefix-foreground = #FE522C
 format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-; format-connected-underline = ${colors.foreground}
-
+format-connected-background = ${xrdb:color9}
+format-disconnected-background = ${xrdb:color9}
+format-connected-padding = 1
+format-disconnected-padding = 1
+format-connected-margin = 2
+format-disconnected-margin = 2
 ################################################################################
 
 [module/networkspeeddown]
@@ -1220,8 +1237,12 @@ format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-prefix-foreground = #3EC13F
 format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-;format-connected-underline = ${colors.foreground}
+format-connected-background = ${xrdb:color9}
+format-disconnected-background = ${xrdb:color9}
+format-connected-padding = 1
+format-disconnected-padding = 1
+format-connected-margin = 2
+format-disconnected-margin = 2
 
 ################################################################################
 
@@ -1265,11 +1286,10 @@ scroll-down = bash -c "pactl set-sink-volume @DEFAULT_SINK@ -1%"
 scroll-up = bash -c "pactl set-sink-volume @DEFAULT_SINK@ +1%"
 click-middle = bash -c "pavucontrol"
 format-prefix = "  "
-format-padding = 1
 format-foreground = ${colors.foreground}
-;format-underline = ${colors.foreground}
-format-background = ${colors.background}
-
+format-background = ${xrdb:color9}
+format-padding = 1
+format-margin = 2
 ################################################################################
 
 [module/backlight-custom]
@@ -1286,11 +1306,10 @@ scroll-down = bash -c "$(xrandr --output eDP-1 --brightness $(awk '{print $1 - 0
 scroll-up = bash -c "$(xrandr --output eDP-1 --brightness $(awk '{print $1 + 0.1}' <<< $(xrandr --verbose --current | grep -Po '(?<=Brightness: )\S+')))"
 
 format-prefix = "󰃟 "
-format-padding = 1
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-;format-underline = ${colors.foreground}
-
+format-background = ${xrdb:color9}
+format-padding = 1
+format-margin = 2
 ################################################################################
 
 [module/pavolume]
@@ -1312,7 +1331,9 @@ format-background = ${colors.background}
 type = custom/text
 content = "󰍂"
 content-foreground = ${colors.foreground}
-content-background = ${colors.background}
+content-background = ${xrdb:color9}
+content-padding = 2
+content-margin = 2
 click-left = archlinux-logout
 click-right = archlinux-logout
 
@@ -1707,23 +1728,31 @@ label-connected = %ifname% %local_ip%
 format-connected = <label-connected>
 ; format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
+format-connected-background = ${xrdb:color9}
+
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.foreground}
-format-connected-prefix-background = ${colors.background}
-; format-connected-underline = ${colors.foreground}
+format-connected-prefix-background = ${xrdb:color9}
+format-connected-padding = 1
+format-connected-margin = 2
+format-disconnected-padding = 2
+format-dsiconnected-margin = 2
+
 
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
-
+label-disconnected-background = ${xrdb:color9}
+label-connected-background = ${xrdb:color9}
+label-disconnected-padding = 1
+label-disconnected-margin = 1
+label-connected-padding = 1
+label-connected-margin = 1
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
+format-disconnected-background = ${xrdb:color9}
 format-disconnected-prefix = "  "
 format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-; format-disconnected-underline =${colors.alert}
+format-disconnected-prefix-background = ${xrdb:color9}
 
 ramp-signal-0 = ▁
 ramp-signal-1 = ▂
