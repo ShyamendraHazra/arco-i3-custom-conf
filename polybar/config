@@ -41,16 +41,16 @@ format-offset =
 
 #background = #60000000
 # foreground = #eeeeee
-foreground-active = #6790EB
-occupied = #cccccc
-occupied-active = #b3c7f5
-active = #5e81ac
-alert = #d08770
+foreground-active = ${xrdb:color9}
+occupied = ${xrdb:color11}
+occupied-active = ${xrdb:color7}
+active = ${xrdb:color5}
+alert = ${xrdb:color3}
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
 
-foreground = ${xrdb:color13}
+foreground = ${xrdb:color14}
 background = #66000000
 
 ; Define colors based on Pywal-generated values
@@ -139,7 +139,8 @@ font-1 = "Noto Sans Mono:size=10;0"
 font-2 = "FontAwesome:size=10;0"
 #font-4 = "Noto Sans:size=14;0"
 
-modules-left = archlinux kernel
+modules-left = archlinux break kernel
+
 modules-center = i3
 modules-right = date break
 
@@ -415,7 +416,6 @@ label = "Arch Linux"
 click-left = warp-terminal
 click-middle = archlinux-logout
 click-right = exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/i3/polybar/scripts/rofi/launcher2.rasi
-
 format-padding = 1
 format-foreground = ${colors.foreground}
 # format-underline = ${colors.foreground}
@@ -678,12 +678,12 @@ type = internal/date
 interval = 1
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = "%d-%m-%Y"
-date-alt = "%A %d %B"
-time = %d-%m-%Y %H:%M:%S
-time-alt = %A %d %B %H:%M:%S
-;format-prefix = " "
-format-prefix =
+date = "%d-%m-%Y "
+date-alt = "%A %d %B "
+time = "%d-%m-%Y %H:%M:%S "
+time-alt = "%A %d %B %H:%M:%S "
+format-prefix = " "
+;format-prefix =
 format-prefix-foreground = ${color.foreground}
 #format-underline = ${colors.foreground}
 format-foreground = ${colors.foreground}
@@ -1042,7 +1042,7 @@ interval = 1024
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = "  "
 ;format-prefix-foreground = #0084FF
 #format-underline = ${colors.foreground}
 
